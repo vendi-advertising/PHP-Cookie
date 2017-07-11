@@ -122,7 +122,7 @@ $obj = new \Delight\Cookie\Cookie('key');testEqual($obj->setValue('value')->setD
 setcookie('hello', 'world', time() + 86400, '/foo/', 'example.com', true, true);
 $cookie = \Delight\Cookie\Cookie::parse(\Delight\Http\ResponseHeader::take('Set-Cookie'));
 
-testEqual($cookie, (new \Delight\Cookie\Cookie('hello'))->setValue('world')->setMaxAge(86400)->setPath('/foo/')->setDomain('example.com')->setHttpOnly(true)->setSecureOnly(true));
+$obj=new \Delight\Cookie\Cookie('hello');testEqual($cookie, $obj->setValue('world')->setMaxAge(86400)->setPath('/foo/')->setDomain('example.com')->setHttpOnly(true)->setSecureOnly(true));
 
 ($cookie->getName() === 'hello') or fail(__LINE__);
 ($cookie->getValue() === 'world') or fail(__LINE__);
