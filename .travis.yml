@@ -1,7 +1,7 @@
 language: bash
 
 before_script:
-    - sudo apt-get install git build-essentials -y
+    - sudo apt-get install git build-essential -y
     - cd
     - git clone git://github.com/phpenv/phpenv.git .phpenv
     - ./phpenv/bin/phpenv install --releases
